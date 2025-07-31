@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compétitions - La Ligue Ardente</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <section class="competitions">
+    <h1>Suivi des Compétitions</h1>
+    <p class="intro">
+      Retrouvez ici les résultats, classements et infos clés sur les ligues professionnelles de League of Legends suivies par La Ligue Ardente.
+    </p>
+
+    <div class="ligues">
+
+  <div class="ligue">
+    <h2><a href="ligues/lfl.html">🇫🇷 LFL (France)</a></h2>
+    <p>Championnat français avec Karmine Corp, Solary, Aegis, etc.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/lec.html">🇪🇺 LEC (Europe)</a></h2>
+    <p>Championnat européen avec G2, BDS, Fnatic et plus.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/lck.html">🇰🇷 LCK (Corée)</a></h2>
+    <p>La ligue coréenne la plus compétitive au monde.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/lpl.html">🇨🇳 LPL (Chine)</a></h2>
+    <p>La ligue chinoise, connue pour son style explosif.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/lcs.html">🇺🇸 LCS (Amérique du Nord)</a></h2>
+    <p>La scène nord-américaine avec Team Liquid, C9...</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/pcs.html">🌏 PCS (Pacifique)</a></h2>
+    <p>Les meilleures équipes de l'Asie du Sud-Est.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/cblol.html">🇧🇷 CBLOL (Brésil)</a></h2>
+    <p>Le championnat national brésilien avec LOUD et paiN.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/tcl.html">🇹🇷 TCL (Turquie)</a></h2>
+    <p>Fenerbahçe, Galatasaray, Beşiktaş et cie.</p>
+  </div>
+
+  <div class="ligue">
+    <h2><a href="ligues/ljl.html">🇯🇵 LJL (Japon)</a></h2>
+    <p>La scène japonaise, avec DetonatioN FocusMe.</p>
+  </div>
+
+</div>
+  </section>
+  <footer id="site-footer"></footer>
+  <script>
+  fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("site-header").innerHTML = data);
+
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("site-footer").innerHTML = data);
+</script>
+</body>
+</html>

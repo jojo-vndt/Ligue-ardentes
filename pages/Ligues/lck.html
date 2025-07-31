@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCK - Classement</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header id="site-header"></header>
+<section class="classement">
+  <h1>🇫🇷 Classement LCK</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Équipe</th>
+        <th>Matchs joués</th>
+        <th>Victoires</th>
+        <th>Défaites</th>
+        <th>Diff.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td>GenG</td><td>20</td><td>19</td><td>1</td><td>+19</td>
+      </tr>
+      <tr>
+        <td>2</td><td>HLE</td><td>20</td><td>15</td><td>5</td><td>+15</td>
+      </tr>
+      <tr>
+        <td>3</td><td>T1</td><td>20</td><td>13</td><td>7</td><td>+13</td>
+      </tr>
+      <tr>
+        <td>4</td><td>KT Rolster</td><td>20</td><td>11</td><td>9</td><td>+11</td>
+      </tr>
+      <tr>
+        <td>5</td><td>NS</td><td>20</td><td>10</td><td>10</td><td>+10</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Dplus Kia</td><td>20</td><td>11</td><td>9</td><td>+11</td>
+      </tr>
+      <tr>
+        <td>7</td><td>Brion</td><td>20</td><td>7</td><td>13</td><td>+7</td>
+      </tr>
+      <tr>
+        <td>8</td><td>FearX</td><td>20</td><td>7</td><td>13</td><td>+7</td>
+      </tr>
+      <tr>
+        <td>9</td><td>DRX</td><td>20</td><td>6</td><td>14</td><td>+6</td>
+      </tr>
+      <tr>
+        <td>10</td><td>DnFreecs</td><td>20</td><td>1</td><td>19</td><td>+1</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+  <h1>Calendrier</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Equipe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01/08</td><td>10h</td><td></td>
+      </tr>
+      <tr>
+        <td>2</td><td>HLE</td><td>20</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</section>
+<footer id="site-footer"></footer>
+<script>
+    const path = window.location.pathname;
+    let base = "/components/";
+
+    if (path.includes("/pages/ligues/")) {
+      base = "/components/"; // reste absolu si tu héberges tout à la racine
+    }
+
+    fetch(base + "header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-header").innerHTML = data);
+
+    fetch(base + "footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-footer").innerHTML = data);
+  </script>
+</body>
+</html>

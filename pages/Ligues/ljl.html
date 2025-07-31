@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LJL - Classement</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+<section class="classement">
+  <h1>🇫🇷 Classement LJL</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Équipe</th>
+        <th>Matchs joués</th>
+        <th>Victoires</th>
+        <th>Défaites</th>
+        <th>Diff.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td>Karmine Corp</td><td>10</td><td>8</td><td>2</td><td>+6</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Solary</td><td>10</td><td>7</td><td>3</td><td>+4</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Aegis</td><td>10</td><td>5</td><td>5</td><td>0</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<footer id="site-footer"></footer>
+<script>
+    const path = window.location.pathname;
+    let base = "/components/";
+
+    if (path.includes("/pages/ligues/")) {
+      base = "/components/"; // reste absolu si tu héberges tout à la racine
+    }
+
+    fetch(base + "header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-header").innerHTML = data);
+
+    fetch(base + "footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-footer").innerHTML = data);
+  </script>
+</body>
+</html>

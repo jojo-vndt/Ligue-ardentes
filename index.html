@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Ligue Ardente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="site-header"></header>
+  <section class="hero">
+    <h1>Actu Brûlante De L'esport !</h1>
+    <p>
+      Suivez chaque semaine les résultats, résumés et actus des ligues League of Legends : LFL, LEC, Worlds et plus encore. C'est chaud, c'est du belge !
+    </p>
+    <button onclick="window.location.href='pages/article.html'">
+      Voir les dernières actus.
+    </button>
+  </section>
+<section class="articles-recents">
+  <h2>Articles récents</h2>
+  <div class="articles-container">
+    <article class="card">
+      <img src="img/article1.jpg" alt="Miniature article 1">
+      <h3>MSI 2025 : Gen.G écrase tout, G2 s'accroche mais chute en demi-finale</h3>
+      <p>Gen.G a dominé le tournoi du début à la fin, s’imposant en grande finale contre JDG. G2, dernier espoir européen, s’incline avec les honneurs en demi-finale face aux Coréens. Une performance encourageante, mais toujours pas de finale pour l'Europe.</p>
+      <a href="articles/article1.html">Lire l’article</a>
+    </article>
+    <article class="card">
+      <img src="img/article2.jpg" alt="Miniature article 2">
+      <h3>LEC : BDS en tête, Fnatic surprend, Vitality inquiète</h3>
+      <p>À mi-parcours du Summer Split, l'équipe BDS impressionne avec un jeu collectif propre. Fnatic retrouve des couleurs tandis que Vitality accumule les défaites, relançant les doutes sur sa structure.</p>
+      <a href="articles/article2.html">Lire l’article</a>
+    </article>
+    <article class="card">
+      <img src="img/article3.jpg" alt="Miniature article 3">
+      <h3>Karmine Corp vs Solary : Le classico LFL fait encore des étincelles</h3>
+      <p>Dans une ambiance survoltée, Karmine Corp et Solary ont livré un match intense. Victoire de KC, mais les deux équipes restent proches au classement. L'engouement des fans ne faiblit pas.</p>
+      <a href="articles/article3.html">Lire l’article</a>
+    </article>
+   </div>
+</section>
+  <footer id="site-footer"></footer>
+<script>
+  // Header
+  fetch("components/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+    });
+
+  // Footer
+  fetch("components/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("site-footer").innerHTML = data;
+    });
+</script>
+</body>
+</html>

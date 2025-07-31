@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPL - Classement</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+<section class="classement">
+  <h1>🇫🇷 Classement LPL</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Équipe</th>
+        <th>Matchs joués</th>
+        <th>Victoires</th>
+        <th>Défaites</th>
+        <th>Diff.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td>Top Esports</td><td>4</td><td>4</td><td>0</td><td>+4</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Weibo Gaming</td><td>4</td><td>3</td><td>1</td><td>+3</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Bilibili Gaming</td><td>2</td><td>2</td><td>0</td><td>+2</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Invictus Gaming</td><td>4</td><td>2</td><td>2</td><td>+2</td>
+      </tr>
+      <tr>
+        <td>5</td><td>FunPlus Foenix</td><td>4</td><td>1</td><td>3</td><td>+1</td>
+      </tr>
+      <tr>
+        <td>6</td><td>JDG</td><td>3</td><td>1</td><td>2</td><td>+1</td>
+      </tr>
+      <tr>
+        <td>7</td><td>AL</td><td>2</td><td>0</td><td>2</td><td>+0</td>
+      </tr>
+      <tr>
+        <td>8</td><td>Team WE</td><td>3</td><td>0</td><td>3</td><td>+0</td>
+      </tr>
+      <tr>
+        <td>9</td><td>EDward Gaming</td><td>4</td><td>4</td><td>0</td><td>+4</td>
+      </tr>
+       <td>10</td><td>Ninjas in Pyjamas</td><td>4</td><td>3</td><td>1</td><td>+3</td>
+      </tr>
+      <tr>
+        <td>11</td><td>TT Gaming</td><td>3</td><td>2</td><td>1</td><td>+2</td>
+      </tr>
+      <tr>
+        <td>12</td><td>LGD Gaming</td><td>4</td><td>2</td><td>2</td><td>+2</td>
+      </tr>
+      <tr>
+        <td>13</td><td>Ultra Prime</td><td>4</td><td>0</td><td>4</td><td>+0</td>
+      </tr>
+      <tr>
+        <td>14</td><td>LNG Esports</td><td>3</td><td>0</td><td>3</td><td>+0</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<footer id="site-footer"></footer>
+<script>
+    const path = window.location.pathname;
+    let base = "/components/";
+
+    if (path.includes("/pages/ligues/")) {
+      base = "/components/"; // reste absolu si tu héberges tout à la racine
+    }
+
+    fetch(base + "header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-header").innerHTML = data);
+
+    fetch(base + "footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-footer").innerHTML = data);
+  </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+/* Palette belge : noir #1E1E1E, jaune #FFCB05, rouge #E63946 */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1E1E1E;
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: #E63946;
+  color: #000;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #E63946, #FFCB05);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+button {
+  background-color: #000;
+  color: #FFCB05;
+  border: 2px solid #E63946;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #E63946;
+  color: #000;
+}
+
+/* Articles */
+.articles-recents {
+  background-color: #111;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Ajouté pour aligner les hauteurs */
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #FFCB05;
+  color: #000;
+  width: 300px;
+  min-height: 500px; /* ✅ Hauteur minimale fixe */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  padding: 15px;
+  font-size: 1.1rem;
+  min-height: 60px; /* uniforme pour les titres */
+}
+
+.card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* nombre de lignes visibles */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.card a {
+  display: inline-block;
+  margin: 15px auto;
+  background-color: #222;
+  color: #FFCB05;
+  padding: 10px 10px;
+  width: 120px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .articles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.lien-logo {
+  padding: 0;
+  background-color: transparent;
+}
+
+.lien-logo:hover {
+  background-color: transparent;
+}
+footer {
+  background-color: #000;
+  color: #FFCB05;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* === COMPETITIONS PAGE === */
+
+.competitions {
+  padding: 60px 20px;
+  background-color: #1E1E1E;
+  color: #fff;
+  text-align: center;
+}
+
+.competitions h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #FFCB05;
+}
+
+.competitions .intro {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Conteneur des ligues */
+.ligues {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Carte ligue */
+.ligue {
+  background-color: #222;
+  border: 2px solid #FFCB05;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ligue:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 203, 5, 0.4);
+}
+
+.ligue h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #FFCB05;
+}
+
+.ligue h2 a {
+  color: #FFCB05;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ligue h2 a:hover {
+  color: #E63946;
+}
+
+.ligue p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive optimisé */
+@media screen and (max-width: 768px) {
+  .competitions h1 {
+    font-size: 2rem;
+  }
+}
+.classement {
+  padding: 60px 20px;
+  background-color: #1E1E1E;
+  color: white;
+  text-align: center;
+}
+
+.classement h1 {
+  font-size: 2.5rem;
+  color: #FFCB05;
+  margin-bottom: 30px;
+}
+
+.classement table {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 203, 5, 0.2);
+  background-color: #111;
+}
+
+.classement th {
+  background-color: #FFCB05;
+  color: #1E1E1E;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 15px 10px;
+  border-bottom: 2px solid #000;
+  text-transform: uppercase;
+}
+
+.classement td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #333;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.classement tr:nth-child(even) {
+  background-color: #222;
+}
+
+.classement tr:hover {
+  background-color: #E63946;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.calendrier {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+.calendrier li:hover{
+  background-color: #E63946;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.calendrier h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.calendrier-section {
+  margin-bottom: 30px;
+}
+
+.calendrier-section h3 {
+  font-size: 1.5rem;
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.calendrier-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.calendrier-section li {
+  background-color: #333;
+  padding: 10px 15px;
+  margin: 8px auto;
+  border-radius: 8px;
+  max-width: 500px;
+  font-size: 1rem;
+  color: #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}

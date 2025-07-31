@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEC - Classement</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+<section class="classement">
+  <h1>🇫🇷 Classement LEC</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Équipe</th>
+        <th>Matchs joués</th>
+        <th>Victoires</th>
+        <th>Défaites</th>
+        <th>Diff.</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td>1</td><td>Vitality </td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Natus Vincere </td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Movistar KOI</td><td>0</td><td>1</td><td>1</td><td>?</td>
+      </tr>
+      <tr>
+        <td>4</td><td>Karmine Corp</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>5</td><td>GIANTX</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>6</td><td>Fnatic</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>7</td><td>SK Gaming</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>8</td><td>G2 Esports</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>9</td><td>Heretics</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+      <tr>
+        <td>10</td><td>Team BDS</td><td>0</td><td>0</td><td>0</td><td>?</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<footer id="site-footer"></footer>
+<script>
+    const path = window.location.pathname;
+    let base = "/components/";
+
+    if (path.includes("/pages/ligues/")) {
+      base = "/components/"; // reste absolu si tu héberges tout à la racine
+    }
+
+    fetch(base + "header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-header").innerHTML = data);
+
+    fetch(base + "footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("site-footer").innerHTML = data);
+  </script>
+</body>
+</html>
