@@ -56,28 +56,7 @@
       <tr>
     </tbody>
   </table>
-  <h1>Calendrier</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Heure</th>
-        <th>Equipe</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>01/08</td><td>10h</td><td></td>
-      </tr>
-      <tr>
-        <td>2</td><td>HLE</td><td>20</td>
-      </tr>
-      
-    </tbody>
-  </table>
-
 </section>
-<footer id="site-footer"></footer>
 <script>
     const path = window.location.pathname;
     let base = "/components/";
@@ -94,5 +73,29 @@
       .then(res => res.text())
       .then(data => document.getElementById("site-footer").innerHTML = data);
   </script>
+  <section class="calendrier">
+  <h2>📅 Calendrier LCK</h2>
+  <div id="calendrier-lck"></div>
+</section>
+<script>
+fetch("calendrier/lck-calendrier.json")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("calendrier-lck");
+    
+    data.forEach(match => {
+      const div = document.createElement("div");
+      div.classList.add("match-item");
+      div.innerHTML = `
+        <p><strong>${match.date}</strong> à ${match.time} — ${match.team1} vs ${match.team2}</p>
+      `;
+      container.appendChild(div);
+    });
+  })
+  .catch(error => {
+    console.error("Erreur de chargement du calendrier :", error);
+  });
+</script>
+<footer id="site-footer"></footer>
 </body>
 </html>

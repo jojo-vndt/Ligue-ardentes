@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier des Ligues</title>
+  <link rel="stylesheet" href="../style.css"> <!-- adapte selon ton arborescence -->
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <main class="calendrier">
+    <h1>📅 Calendrier des ligues</h1>
+
+    <section id="calendrier-lck" class="calendrier-section"></section>
+    <section id="calendrier-lec" class="calendrier-section"></section>
+    <section id="calendrier-lfl" class="calendrier-section"></section>
+    <section id="calendrier-lpl" class="calendrier-section"></section>
+    <section id="calendrier-lcs" class="calendrier-section"></section>
+    <section id="calendrier-ljl" class="calendrier-section"></section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script>
+    // Header/footer
+    fetch("../components/header.html").then(res => res.text()).then(data => document.getElementById("site-header").innerHTML = data);
+    fetch("../components/footer.html").then(res => res.text()).then(data => document.getElementById("site-footer").innerHTML = data);
+
+    // Fonction d'affichage calendrier
+    function afficherCalendrier(idSection, nomLigue, fichier) {
+      fetch(`../ligues/calendrier/${fichier}`)
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById(idSection);
+          const title = document.createElement("h2");
+          title.textContent = nomLigue;
+          container.appendChild(title);
+
+          data.forEach(match => {
+            const div = document.createElement("div");
+            div.classList.add("match-item");
+            div.innerHTML = `<p><strong>${match.date}</strong> à ${match.time} — ${match.team1} vs ${match.team2}</p>`;
+            container.appendChild(div);
+          });
+        })
+        .catch(error => {
+          console.error(`Erreur chargement ${fichier} :`, error);
+        });
+    }
+
+    // Appels pour chaque ligue
+    afficherCalendrier("calendrier-lck", "LCK", "lck-calendrier.json");
+    afficherCalendrier("calendrier-lec", "LEC", "lec-calendrier.json");
+    afficherCalendrier("calendrier-lfl", "LFL", "lfl-calendrier.json");
+    afficherCalendrier("calendrier-lpl", "LPL", "lpl-calendrier.json");
+    afficherCalendrier("calendrier-lcs", "LCS", "lcs-calendrier.json");
+    afficherCalendrier("calendrier-ljl", "LJL", "ljl-calendrier.json");
+  </script>
+
+</body>
+</html>

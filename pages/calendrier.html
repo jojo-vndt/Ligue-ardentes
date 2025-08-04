@@ -8,44 +8,24 @@
 </head>
 <body>
     <header id="site-header"></header>
-    <section class="calendrier">
-  <h2>📅 Calendrier des événements</h2>
+   <main class="calendrier">
+  <h1>📅 Calendrier des ligues</h1>
 
-  <div class="calendrier-section msi">
-    <h3>MSI</h3>
+  <nav class="calendrier-menu">
     <ul>
-      <li>12 juillet – Demi-finale : T1 vs G2</li>
-      <li>14 juillet – Finale : Gen.G vs TBD</li>
+      <li><a href="calendrier-lck.html">LCK</a></li>
+      <li><a href="calendrier-lec.html">LEC</a></li>
+      <li><a href="calendrier-lfl.html">LFL</a></li>
+      <li><a href="calendrier-lpl.html">LPL</a></li>
+      <li><a href="calendrier-lcs.html">LCS</a></li>
+      <li><a href="calendrier-ljl.html">LJL</a></li>
     </ul>
-  </div>
+  </nav>
 
-  <div class="calendrier-section lec">
-    <h3>LEC</h3>
-    <ul>
-      <li>16 juillet – Match : BDS vs Fnatic</li>
-      <li>20 juillet – Match : Vitality vs SK</li>
-    </ul>
-  </div>
-
-  <div class="calendrier-section lfl">
-    <h3>LFL</h3>
-    <ul>
-      <li>17 juillet – KC vs Solary</li>
-      <li>21 juillet – GameWard vs LDLC OL</li>
-    </ul>
-  </div>
-
-  <div class="calendrier-section patch">
-    <h3>Patchs</h3>
-    <ul>
-      <li>17 juin – Patch 25.13 déployé</li>
-      <li>01 août – Patch 25.14 prévu</li>
-    </ul>
-  </div>
-
-</section>
+  <p>Sélectionnez une ligue pour voir son calendrier complet.</p>
+</main>
 <footer id="site-footer"></footer>
-  <script>
+<script>
   fetch("../components/header.html")
     .then(res => res.text())
     .then(data => document.getElementById("site-header").innerHTML = data);

@@ -35,11 +35,14 @@ header {
   padding: 8px 12px;
   border-radius: 5px;
   transition: 0.3s;
+  border: 2px solid #FFCB05;
+  box-shadow: 0 0 5px #FFCB05;
 }
 
 .menu a:hover {
-  background-color: #E63946;
+  background: linear-gradient(to right, #E63946, #FFCB05);
   color: #000;
+  box-shadow: 0 0 15px #FFCB05;
 }
 
 /* Hero Section */
@@ -69,11 +72,13 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
+  background: linear-gradient(to left, #E63946, #FFCB05);
+  box-shadow: 0 0 15px #FFCB05;
 }
 
 button:hover {
-  background-color: #E63946;
   color: #000;
+  font-weight: bold;
 }
 
 /* Articles */
@@ -309,45 +314,134 @@ footer {
   color: white;
   transition: background-color 0.3s ease;
 }
-.calendrier {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-.calendrier li:hover{
-  background-color: #E63946;
-  color: white;
-  transition: background-color 0.3s ease;
+.calendrier-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
-.calendrier h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+.calendrier-menu a {
+  text-decoration: none;
+  background-color: #FFCB05;
+  color: #1E1E1E;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.calendrier-menu a:hover {
+  background-color: #E63946;
+  color: #fff;
+}
+/* === PAGE CALENDRIER STYLÉ === */
+
+.calendrier {
+  background-color: #1E1E1E;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.calendrier h1 {
+  font-size: 3rem;
+  color: #FFCB05;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px #E63946;
+  animation: glowTitle 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowTitle {
+  from {
+    text-shadow: 0 0 10px #FFCB05, 0 0 20px #E63946;
+  }
+  to {
+    text-shadow: 0 0 20px #E63946, 0 0 30px #FFCB05;
+  }
 }
 
 .calendrier-section {
-  margin-bottom: 30px;
+  margin: 50px auto;
+  max-width: 700px;
+  background-color: #111;
+  border: 2px solid #FFCB05;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(255, 203, 5, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.calendrier-section h3 {
-  font-size: 1.5rem;
-  color: #ffc107;
-  margin-bottom: 10px;
+.calendrier-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(230, 57, 70, 0.5);
 }
 
-.calendrier-section ul {
-  list-style-type: none;
-  padding: 0;
+.calendrier-section h2 {
+  font-size: 2rem;
+  color: #E63946;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.calendrier-section li {
-  background-color: #333;
-  padding: 10px 15px;
-  margin: 8px auto;
+.calendrier-section h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #FFCB05;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.match-item {
+  background-color: #222;
+  color: #fff;
+  padding: 15px 20px;
+  border-left: 6px solid #FFCB05;
   border-radius: 8px;
-  max-width: 500px;
-  font-size: 1rem;
-  color: #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 15px 0;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
+.match-item:hover {
+  background-color: #E63946;
+  color: #fff;
+  border-left-color: #1E1E1E;
+}
+
+.match-item::before {
+  content: "🎮";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 1.2rem;
+}
+
+.match-item p {
+  margin-left: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .calendrier h1 {
+    font-size: 2.2rem;
+  }
+  .calendrier-section {
+    padding: 20px 15px;
+  }
+  .match-item p {
+    font-size: 0.95rem;
+  }
+}
+
